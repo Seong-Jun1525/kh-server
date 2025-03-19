@@ -49,3 +49,5 @@ Thumbs.db
 
 # 기타 바이너리 파일들
 *.bak
+
+Servers/
