@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>requestTest_GET</title>
+</head>
+<body style="margin: 0; padding: 1rem;">
+    <h1>* Get Test *</h1>
+
+    <!-- 
+        서블릿에게 요청 시 반드시 context root 뒤에 작성되어야 함
+
+        - 현재 페이지의 경우 url 주소가
+            http://localhost:8888/1_servlet/views/requestTest_GET.html
+
+            + 상대경로로 test.do 요청 시
+                1_servlet/views/test.do 와 같이 요청이 되었음
+
+            + 따라서 절대 경로로 Context root를 포함하여 요청해야 함
+                /1_servlet/test.do로 요청해야함
+    -->
+    <form action="/1_servlet/test.do" method="get">
+        <div>
+            <label for="userName">이름 : </label>
+            <input type="text" name="userName" id="userName">
+        </div>
+        <div>
+            성별 : 
+            <input type="radio" name="gender" id="genderM" value="남자" checked><label for="genderM">남자</label>
+            <input type="radio" name="gender" id="genderF" value="여자"><label for="genderF">여자</label>
+        </div>
+        <div>
+            <label for="age">나이</label><input type="number" name="age" id="age">
+        </div>
+        <div>
+            <label for="address">주소</label>
+            <select name="address" id="address">
+                <!-- value는 텍스트값이랑 같을 경우 작성하지 않아도 된다 -->
+                <option value="서울">서울</option>
+                <option value="인천">인천</option>
+                <option value="경기">경기</option>
+                <option value="강원">강원</option>
+                <option value="제주">제주</option>
+            </select>
+        </div>
+        <div>
+            키 : <input type="range" name="height" id="height" min="120" max="200" value="160" step="5">
+        </div>
+        <div>
+            좋아하는 음식 :
+            <input type="checkbox" name="food" value="한식">한식
+            <input type="checkbox" name="food" value="중식">중식
+            <input type="checkbox" name="food" value="일식">일식
+            <input type="checkbox" name="food" value="서양식">서양식
+            <input type="checkbox" name="food" value="미국식">미국식
+            <br>
+        </div>
+        <input type="submit">
+        <input type="reset" value="초기화">
+    </form>
+</body>
+</html>
