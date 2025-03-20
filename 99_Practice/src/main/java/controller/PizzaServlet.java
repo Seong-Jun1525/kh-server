@@ -1,11 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.time.LocalDate;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RandomNumberServlet
+ * Servlet implementation class PizzaServlet
  */
-@WebServlet("/randomNumber")
-public class RandomNumberServlet extends HttpServlet {
+@WebServlet("/practice2_pizza.do")
+public class PizzaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RandomNumberServlet() {
+    public PizzaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,31 +28,38 @@ public class RandomNumberServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO: practice1_result.jsp 페이지로 응답하기
-//		request.setCharacterEncoding("UTF-8");
-		System.out.println("get!!");
-		Set<Integer> l = new HashSet<>();
+		LocalDate now = LocalDate.now();
 		
-		while(true) {
-			int r = (int)(Math.random() * 45) + 1;
-			l.add(r);
-			if(l.size() == 6) break;
+		System.out.println(now);
+		int day = now.getDayOfWeek().getValue();
+		String dayStr = "";
+		switch(day) {
+		case 0:
+			dayStr = "일요일";
+			break;
+		case 1:
+			dayStr = "월요일";
+			break;
+		case 2:
+			dayStr = "화요일";
+			break;
+		case 3:
+			dayStr = "수요일";
+			break;
+		case 4:
+			dayStr = "목요일";
+			break;
+		case 5:
+			dayStr = "금요일";
+			break;
+		case 6:
+			dayStr = "토요일";
+			break;
 		}
 		
-		String[] arr = new String[6];
-		int j = 0;
+		request.setAttribute("today", now + " " + dayStr);
 		
-		Iterator<Integer> i = l.iterator();
-		while(i.hasNext()) {
-			arr[j++] = i.next() + "";
-			System.out.println(arr[j-1]);
-		}
-		
-		request.setAttribute("random", arr);
-		RequestDispatcher view = request.getRequestDispatcher("views/practice1_result.jsp");
-		
-		// 	-> 변수명.forward(request, response);
-		view.forward(request, response);
+		request.getRequestDispatcher("views/practice2_pizza.jsp").forward(request, response);
 	}
 
 	/**

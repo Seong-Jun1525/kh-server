@@ -8,10 +8,10 @@
 </head>
 <body>
 	<%-- 1 ~ 45까지 랜덤 숫자 6개를 뽑아 출력하기 --%>
-	
 	<% String[] arr = (String[]) request.getAttribute("random"); %>
 	
 	<h1>랜덤숫자</h1>
+	
 	
 	<% if(arr != null) { %>
 		<ul>
