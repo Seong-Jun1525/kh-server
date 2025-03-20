@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\user1\Desktop\seongjun-study\kh-server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\317926650.index
-\1_servlet\src\main\java
-C:\Users\user1\Desktop\seongjun-study\kh-server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2209331829.index
-\2_jsp\src\main\java
-C:\Users\user1\Desktop\seongjun-study\kh-server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1358388946.index
-\99_Practice\src\main\java

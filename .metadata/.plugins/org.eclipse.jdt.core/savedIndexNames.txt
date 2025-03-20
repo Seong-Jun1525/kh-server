@@ -1,7 +1,0 @@
-INDEX VERSION 1.131+C:\Users\user1\Desktop\seongjun-study\kh-server\.metadata\.plugins\org.eclipse.jdt.core
-2471921858.index
-3007200120.index
-1967661562.index
-3409316447.index
-1865797976.index
-225067546.index
