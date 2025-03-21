@@ -49,6 +49,8 @@ public class OperatorServlet extends HttpServlet {
 		list2.add("옥지");
 		
 		request.setAttribute("list2", list2);
+		
+		request.getRequestDispatcher("views/2_EL/2_elOperator.jsp").forward(request, response);
 	}
 
 	/**
