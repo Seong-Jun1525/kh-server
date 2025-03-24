@@ -10,7 +10,7 @@
 <title>JSTL - fmt</title>
 </head>
 <body>
-	<h3>* formatNumber</h3>
+	<h1>* formatNumber</h1>
 	<p>
 		숫자 데이터의 형식(포맷) 지정<br>
 		- 표현하고자하는 숫자데이터의 형식을 통화기호, %등으로 원하는 방식에 맞게 지정하는 태그<br>
@@ -39,8 +39,41 @@
 	<br>
 	<fmt:formatNumber value="${n3 }" type="currency" currencySymbol="$" /> <br>
 	
-	<h3>* formatDate</h3>
+	<h1>* formatDate</h1>
 	<p>날짜 및 시간 데이터의 포맷(형식) 지정하여 출력</p>
 	<i>단, java.util.Date 객체 사용한다</i>
+	<br>
+	<c:set var="now" value="<%= new java.util.Date() %>" /> <%-- set : setAttribute 사용하는 것과 같음 --%>
+	- now : ${ now }
+	<br>
+	
+	<ul>
+		<li>
+			날짜 : <fmt:formatDate value="${now }" type="date" /> <%-- 기본값 --%>
+		</li>
+		<li>
+			시간 : <fmt:formatDate value="${now }" type="time" />
+		</li>
+		<li>
+			날짜 + 시간 : <fmt:formatDate value="${now }" type="both" />
+			<ul>
+				<li>
+					medium : <fmt:formatDate value="${now }" type="both" dateStyle="medium" timeStyle="medium" /> <%-- 기본값 --%>
+				</li>
+				<li>
+					long : <fmt:formatDate value="${now }" type="both" dateStyle="long" timeStyle="long" />
+				</li>
+				<li>
+					short : <fmt:formatDate value="${now }" type="both" dateStyle="short" timeStyle="short" />
+				</li>
+				<li>
+					full : <fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full" />
+				</li>
+				<li>
+					pattern : <fmt:formatDate value="${now }" type="both" pattern="yyyy-MM-dd(E) HH:mm:ss" />
+				</li>
+			</ul>
+		</li>
+	</ul>
 </body>
 </html>

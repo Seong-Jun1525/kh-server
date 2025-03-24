@@ -72,5 +72,6 @@
 		<li>WEB-INF/lib/ 위치에 라이브러리 파일 추가</li>
 	</ol>
 	<a href="views/4_CustomAction/1_jstl.jsp">JSTL 문법</a>
+	
 </body>
 </html>
