@@ -55,22 +55,22 @@
 
 	<jsp:include page="../common/footer.jsp" />
 	
-	<div class="modal fade modal-lg"" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+					<h1 class="modal-title fs-5" id="exampleModalLabel">사원추가양식</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<form>
 						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="recipient-name">
+							<label for="empName" class="col-form-label">사원이름</label>
+							<input type="text" class="form-control" id="empName">
 						</div>
 						<div class="mb-3">
-							<label for="message-text" class="col-form-label">Message:</label>
-							<textarea class="form-control" id="message-text"></textarea>
+							<label for="empNo" class="col-form-label">주민번호</label>
+							<input type="text" class="form-control" id="empNo">
 						</div>
 					</form>
 				</div>
